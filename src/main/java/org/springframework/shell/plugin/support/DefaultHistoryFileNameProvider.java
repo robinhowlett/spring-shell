@@ -21,7 +21,7 @@ import org.springframework.shell.plugin.HistoryFileNameProvider;
 import org.springframework.stereotype.Component;
 
 /**
- * Default history file provider. Default file is {@link org.springframework.shell.Constant.HISTORY_FILE_NAME}
+ * Default history file provider.
  * 
  * @author Jarred Li
  *

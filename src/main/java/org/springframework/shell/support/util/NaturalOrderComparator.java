@@ -19,9 +19,9 @@ import java.util.Comparator;
 
 /**
  * NaturalOrderComparator.java -- Perform natural order comparisons of strings in Java.
- * Copyright (C) 2003 by Pierre-Luc Paour <natorder@paour.com>
+ * Copyright (C) 2003 by Pierre-Luc Paour (natorder@paour.com)
  * Based on the C version by Martin Pool, of which this is more or less a straight conversion.
- * Copyright (C) 2000 by Martin Pool <mbp@humbug.org.au>
+ * Copyright (C) 2000 by Martin Pool (mbp@humbug.org.au)
  *
  * This software is provided as-is, without any express or implied
  * warranty.  In no event will the authors be held liable for any damages

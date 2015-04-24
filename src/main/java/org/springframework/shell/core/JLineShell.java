@@ -49,6 +49,7 @@ import org.fusesource.jansi.Ansi.Attribute;
 import org.fusesource.jansi.Ansi.Color;
 import org.fusesource.jansi.Ansi.Erase;
 import org.fusesource.jansi.AnsiConsole;
+import org.springframework.core.Ordered;
 import org.springframework.shell.event.ShellStatus;
 import org.springframework.shell.event.ShellStatus.Status;
 import org.springframework.shell.event.ShellStatusListener;
@@ -647,7 +648,7 @@ public abstract class JLineShell extends AbstractShell implements Shell, Runnabl
 
 	/**
 	 * get history file name from provider. The provider has highest order
-	 * <link>org.springframework.core.Ordered.getOder</link> will win.
+	 * {@link Ordered#getOrder()} will win.
 	 * 
 	 * @return history file name
 	 */
@@ -655,7 +656,7 @@ public abstract class JLineShell extends AbstractShell implements Shell, Runnabl
 
 	/**
 	 * get prompt text from provider. The provider has highest order
-	 * <link>org.springframework.core.Ordered.getOder</link> will win.
+	 * {@link Ordered#getOrder()} will win.
 	 * 
 	 * @return prompt text
 	 */

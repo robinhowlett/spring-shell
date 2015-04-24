@@ -24,6 +24,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.SmartLifecycle;
+import org.springframework.core.Ordered;
 import org.springframework.shell.CommandLine;
 import org.springframework.shell.plugin.BannerProvider;
 import org.springframework.shell.plugin.HistoryFileNameProvider;
@@ -171,7 +172,7 @@ public class JLineShellComponent extends JLineShell implements SmartLifecycle, A
 
 	/**
 	 * get history file name from provider. The provider has highest order 
-	 * <link>org.springframework.core.Ordered.getOder</link> will win. 
+	 * {@link Ordered#getOrder()} will win. 
 	 * 
 	 * @return history file name 
 	 */
@@ -187,7 +188,7 @@ public class JLineShellComponent extends JLineShell implements SmartLifecycle, A
 
 	/**
 	 * get prompt text from provider. The provider has highest order 
-	 * <link>org.springframework.core.Ordered.getOder</link> will win. 
+	 * {@link Ordered#getOrder()} will win. 
 	 * 
 	 * @return prompt text
 	 */

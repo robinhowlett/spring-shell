@@ -21,7 +21,7 @@ import org.springframework.shell.plugin.PromptProvider;
 import org.springframework.stereotype.Component;
 
 /**
- * Default prompt provider. The prompt text is {@link org.springframework.shell.Constant.COMMAND_LINE_PROMPT}
+ * Default prompt provider.
  * 
  * @author Jarred Li
  *

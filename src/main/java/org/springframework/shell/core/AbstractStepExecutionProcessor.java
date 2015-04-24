@@ -7,6 +7,8 @@ import static java.util.logging.Level.SEVERE;
 
 import java.util.logging.Logger;
 
+import jline.console.ConsoleReader;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.shell.core.annotation.CliStepIndicator;
@@ -45,7 +47,10 @@ public abstract class AbstractStepExecutionProcessor implements ExecutionProcess
 	@Override
 	public void afterReturningInvocation(ParseResult invocationContext, Object result) {
 		// if the command being invoked supports steps...
-		if (isStepCommand(invocationContext)) {			
+		if (isStepCommand(invocationContext)) {
+			ConsoleReader reader = shell.getReader();
+			String prompt = (reader != null ? reader.getPrompt() : null);
+			
 			stepResult = result;
 			
 			// display the initial step result
@@ -63,6 +68,10 @@ public abstract class AbstractStepExecutionProcessor implements ExecutionProcess
 				
 				// display the step result
 				handleStepExecutionResult(invocationContext, stepResult);
+			}
+			
+			if (reader != null) {
+				reader.setPrompt(prompt);
 			}
 		}
 	}

@@ -35,7 +35,7 @@ public final class PluginUtils {
 	}
 
 	/**
-	 * Returns the highest priority {@link PluginProvider} of specified type defined in
+	 * Returns the highest priority {@link NamedProvider} of specified type defined in
 	 * given application context.
 	 *
 	 * @since 1.0.1

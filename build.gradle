@@ -213,3 +213,13 @@ mainClassName = "org.springframework.shell.Bootstrap"
 
 assemble.dependsOn = ['jar', 'sourcesJar']
 defaultTasks 'build'
+
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+	manifest {
+        attributes 'Implementation-Title': 'Spring Shell SHL-106 SHL-174 SHL-175 Fat Jar', 'Implementation-Version': version
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}

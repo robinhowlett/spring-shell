@@ -204,7 +204,7 @@ public abstract class AbstractShell extends AbstractShellStatusPublisher impleme
 	}
 
 	/**
-	 * Default implementation of {@link Shell#setPromptPath(String, boolean))} method to satisfy STS compatibility.
+	 * Default implementation of {@link Shell#setPromptPath(String, boolean)} method to satisfy STS compatibility.
 	 *
 	 * @param path to set (can be null or empty)
 	 * @param overrideStyle
