@@ -8,6 +8,10 @@ buildscript {
     }
 }
 
+configurations {
+    deployerJars
+}
+
 description = 'Spring Shell'
 group = 'org.springframework.shell'
 
@@ -51,6 +55,17 @@ dependencies {
     testCompile "org.mockito:mockito-core:$mockitoVersion"
     testCompile "org.hamcrest:hamcrest-library:$hamcrestVersion"
     testCompile "uk.co.modular-it:hamcrest-date:$hamcrestDateVersion"
+
+    deployerJars "org.kuali.maven.wagons:maven-s3-wagon:1.2.1"
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        configuration = configurations.deployerJars
+        repository(url: "s3://maven.robinhowlett.com/release") {
+            authentication(userName: "$System.env.AWS_ACCESS_KEY_ID", password: "$System.env.AWS_SECRET_KEY")
+        }
+    }
 }
 
 sourceCompatibility = 1.6
