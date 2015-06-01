@@ -3,3 +3,5 @@ branches:
   only:
   - master
   - /^feature.*/
+after_script:
+  - gradle fatJar deploy
