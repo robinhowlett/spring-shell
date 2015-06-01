@@ -4,4 +4,4 @@ branches:
   - master
   - /^feature.*/
 after_script:
-  - gradle fatJar deploy
+  - gradle fatJar uploadArchives
